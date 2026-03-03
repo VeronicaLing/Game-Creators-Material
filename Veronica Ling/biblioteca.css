@@ -1,0 +1,119 @@
+.pagina {
+    background-color: rgb(122, 122, 122);
+}
+
+.cabecalho {
+    background-color: #30364F;
+    font-weight: 200;
+    text-align: left;
+    padding: 10px 0px 10px 690px;
+    font-size: 65px;
+    margin: 0;
+    color: #E1D9BC;
+    /* display:inline; */
+   text-shadow: 3px -1px 4px rgba(66, 64, 55, 0.66);
+
+}
+
+.display-flex {
+    display: flex;
+    background-color: #30364F;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 10px 0px;
+
+}
+
+.titulo-texto {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: #30364F;
+    line-height: 1;
+    padding: 20px 60px;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 1;
+    text-shadow: 3px -1px 4px rgba(57, 67, 121, 0.66);
+}
+
+.linha-estilizada-sub {
+    background-color: #E1D9BC;
+    /* color: #007E6E; */
+    color: #75562f;
+    font-style: italic;
+    font-weight: 525;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 30px 20px 30px 0px;
+    margin: 0;
+    line-height: 0;
+    font-size: 32px;
+    text-shadow: 3px -1px 4px rgba(122, 92, 57, 0.76);
+}
+
+.topicos {
+    text-align: center;
+    line-height: 1;
+    padding: 5px 5px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: #E7DEAF;
+    margin: 1 auto;
+    background-color: #30364F;
+    box-shadow: 15px 16px 7px -3px rgba(0,0,0,0.62);
+
+}
+
+.display-body {
+    /* background-color:rgb(221, 243, 237); */
+    margin: 5px;
+    width: 80%;
+    max-width: 2000px;
+    min-height: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.display-footer {
+    background-color:#30364F;
+    text-align: justify;
+    margin: 5px;
+    width: 97.7%;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #E7DEAF;
+}
+
+.rights {
+    text-align: center;
+    font-size: 15px;
+    background-color: #75562f;
+    color: #E7DEAF;
+}
+
+.footer1 {
+    text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer2 {
+    text-align: justify;
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.topicos:hover {
+    cursor: pointer;
+}
+.topicos:active {
+    color:rgb(5, 122, 255)
+}

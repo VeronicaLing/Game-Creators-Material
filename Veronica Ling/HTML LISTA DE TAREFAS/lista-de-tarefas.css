@@ -1,0 +1,63 @@
+.h1 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 35px;
+    font-size: 35px;
+}
+
+.body {
+    background-color: rgb(178, 168, 202);
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 15px;
+    background-image: linear-gradient(rgba(218, 205, 240, 0.486), rgba(218, 205, 240, 0.486)), url("https://static.vecteezy.com/ti/vetor-gratis/p1/5697393-white-clipboard-task-management-todo-check-list-efficient-work-on-project-plan-fast-progress-level-up-concept-assignment-and-exam-productivity-solution-icon-3d-vector-renderizacao-em-fundo-roxo-vetor.jpg");
+    background-size: cover;
+}
+
+.div1 {
+    padding-top: 25px;
+}
+
+.div2 {
+    display: inline-flex;
+    align-items: center;
+}
+
+.li {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgb(180, 216, 218);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px 10px 10px 10px;
+    padding: 0px 20px 0px 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 15px auto;
+    width: 400px;
+}
+
+.li2 {
+    background-color: rgb(117, 7, 7);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    max-height: 35px;
+    align-self: center;
+}
+
+p {
+    overflow-wrap: anywhere;
+    text-align: justify;
+}
+
+#lista_tarefa {
+    margin-bottom: 35px;
+}
+
+.li3 {
+    text-decoration: line-through;
+}
