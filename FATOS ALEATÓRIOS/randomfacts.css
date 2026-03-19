@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.p1 {
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgba(175, 161, 151, 0.74);
+    background-image: url("https://t3.ftcdn.net/jpg/07/80/85/18/360_F_780851826_HJavVlz4nCaxM5jtCeS9oYK5hDfKwpA6.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 180px;
+}
