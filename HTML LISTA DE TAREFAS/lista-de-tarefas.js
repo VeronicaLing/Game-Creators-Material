@@ -100,9 +100,6 @@ input.addEventListener("keydown", (event) => {
 
 
 
-
-
-
 // let nome = "veronica"
 // let usuario = {
 //     "nome": "veronica",
