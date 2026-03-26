@@ -18,15 +18,16 @@ async function pegar_fotos() {
     foto_obj = await (foto_response.json())
     console.log(foto_response)
     console.log(foto_obj)
-
     console.log(foto_obj[0].url)
 
     const imagem = document.createElement("img")
-    imagem.classList.add("p")
-    imagem.src = foto_obj[0].url
     $container.appendChild(imagem)
+    imagem.classList.add("p1")
+    imagem.src = foto_obj[0].url
+    imagem.style.imageRendering = "auto"
     imagem.style.border = "5px solid #868686"
-
+    
+    
     $foto_info.textContent = foto_obj[0].url
     $foto_id.textContent = foto_obj[0].id
     $foto_width.textContent = foto_obj[0].width
@@ -41,7 +42,11 @@ async function pegar_fotos() {
     console.log($foto_height)
 
 
+    setTimeout(() => {
+        
+    }, 1500);
     
 }
 
 pegar_fotos()
+
