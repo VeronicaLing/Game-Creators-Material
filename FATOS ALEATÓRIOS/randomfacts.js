@@ -8,10 +8,12 @@ async function pegar_fotos() {
     let $foto_id = document.createElement("p")
     let $foto_width = document.createElement("p")
     let $foto_height = document.createElement("p")
+    let $foto_orientation = document.createElement("p")
     $foto_info.classList.add("p")
     $foto_id.classList.add("p")
     $foto_width.classList.add("p")
     $foto_height.classList.add("p")
+    $foto_orientation.classList.add("p0")
 
     console.log("Carregando...")
     foto_response = await (fetch(URL_FOTOS))
@@ -26,8 +28,7 @@ async function pegar_fotos() {
     imagem.src = foto_obj[0].url
     imagem.style.imageRendering = "auto"
     imagem.style.border = "5px solid #868686"
-    
-    
+
     $foto_info.textContent = foto_obj[0].url
     $foto_id.textContent = foto_obj[0].id
     $foto_width.textContent = foto_obj[0].width
@@ -41,12 +42,25 @@ async function pegar_fotos() {
     console.log($foto_width)
     console.log($foto_height)
 
+    const foto_orientation = document.createElement("p")
+    $container.appendChild(foto_orientation)
+    foto_orientation.classList.add("p0")
+    imagem.onload = () => {
+        if (imagem.width > imagem.height) {
+            foto_orientation.textContent = "Orientação: Horizontal"
+        } else if (imagem.height > imagem.width) {
+            foto_orientation.textContent = "Orientação: Vertical"
+        } else {
+            foto_orientation.textContent = "Orientação: Quadrada"
+        }
+    }
 
     setTimeout(() => {
-        
+
     }, 1500);
-    
+
 }
+
 
 pegar_fotos()
 
