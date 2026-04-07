@@ -68,6 +68,5 @@ async function pegar_fotos() {
 
 }
 
-
 pegar_fotos()
 
