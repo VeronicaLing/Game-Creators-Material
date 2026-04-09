@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: darkolivegreen;
+}
+
+.titulo {
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgba(162, 196, 141, 0.74);
+    background-image: url("https://i.pinimg.com/originals/5d/26/a1/5d26a173f443cbd190e34481438d474b.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 70px;
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.menu {
+    display: block;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.button {
+    background-color:  rgba(162, 196, 141, 0.74);
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
+    border-radius: 8px 8px 8px 8px;
+    padding: 8px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+}
