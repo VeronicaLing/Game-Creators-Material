@@ -25,7 +25,7 @@
 }
 
 .button {
-    background-color:  rgba(162, 196, 141, 0.74);
+    background-color: rgba(162, 196, 141, 0.74);
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
     border-radius: 8px 8px 8px 8px;
     padding: 8px;
@@ -33,4 +33,18 @@
     margin-bottom: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
+}
+
+.b1 {
+    display: flex;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
+}
+
+.img {
+    display: flex;
+    align-content: space-between;
+}
+
+#container2 {
+    display: flex;
 }
