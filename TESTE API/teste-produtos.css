@@ -1,19 +1,19 @@
 * {
-    padding: 0;
-    margin: 0;
+    max-width: 100%;
+   
     box-sizing: border-box;
-    background-color: darkolivegreen;
+    background-color: rgb(252, 211, 150);
 }
 
 .titulo {
     text-align: center;
     margin: 15px;
     padding: 10px;
-    background-color: rgba(162, 196, 141, 0.74);
-    background-image: url("https://i.pinimg.com/originals/5d/26/a1/5d26a173f443cbd190e34481438d474b.png");
+    background-color: rgba(241, 144, 53, 0.74);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZL6Ycnsb-dTTmBYArFkrocUgJHZ7tSwUitw&s");
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: 70px;
+    background-size: 72px;
     font-size: 45px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -25,7 +25,7 @@
 }
 
 .button {
-    background-color: rgba(162, 196, 141, 0.74);
+    background-color:  rgba(241, 144, 53, 0.74);
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
     border-radius: 8px 8px 8px 8px;
     padding: 8px;
@@ -36,15 +36,25 @@
 }
 
 .b1 {
-    display: flex;
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
+    max-width: 300px;
+    margin: 10px;
+    text-align: center;
 }
 
-.img {
-    display: flex;
-    align-content: space-between;
+.produto{
+    margin:5px
 }
 
 #container2 {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+    align-items: center;
+}
+
+
+.body{
+    padding-bottom: 50px;
+    min-height: 100vh;
 }

@@ -20,22 +20,20 @@ async function produtos_categorias(categoria) {
     $container2.innerHTML = ""
 
     categorias.forEach(produto => {
-        const p = document.createElement("div")
-        p.classList.add("b")
-        $container.appendChild(p)
 
-        const produto_info = document.createElement("div")
-        produto_info.classList.add("b1")
-        $container2.appendChild(produto_info)
+        const conteudo = document.createElement("div")
+        conteudo.classList.add("b1")
+        $container2.appendChild(conteudo)
 
         const nome_produto = document.createElement("h3")
-        nome_produto.classList.add("produto-nome")
+        nome_produto.classList.add("produto")
         nome_produto.textContent = produto.nome
-        produto_info.appendChild(nome_produto)
 
         const imagem = document.createElement("img")
+        // imagem.classList.add("imag")
         $container2.appendChild(imagem)
-        imagem.classList.add("p")
+        conteudo.appendChild(nome_produto)
+        conteudo.appendChild(imagem)
         imagem.src = "https://placehold.co/400"
     })
 
