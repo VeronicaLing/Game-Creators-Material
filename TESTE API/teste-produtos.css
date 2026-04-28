@@ -1,15 +1,14 @@
 * {
     max-width: 100%;
-
     box-sizing: border-box;
-    background-color: rgb(201, 233, 255);
+    background-color: rgb(218, 238, 252);
 }
 
 .titulo {
     text-align: center;
-    margin: 15px;
+    margin: 0px;
     padding: 10px;
-    background-color: rgba(21, 87, 163, 0.74);
+    background-color: rgba(62, 103, 150, 0.74);
     background-image: url("https://cdn-icons-png.flaticon.com/512/34/34562.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -22,14 +21,17 @@
     display: block;
     justify-content: space-between;
     text-align: center;
+    background-color: aliceblue;
+    height: 60px;
 }
 
 .button {
     background-color: rgba(246, 246, 250, 0.74);
-    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
-    border-radius: 8px 8px 8px 8px;
+    /* box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781); */
+    /* border-radius: 8px 8px 8px 8px; */
+    border-color: aliceblue;
     padding: 8px;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
@@ -62,7 +64,7 @@
 
 .body {
     padding-bottom: 50px;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .botao1 {
