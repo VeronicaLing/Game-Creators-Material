@@ -1,16 +1,16 @@
 * {
     max-width: 100%;
-   
+
     box-sizing: border-box;
-    background-color: rgb(252, 211, 150);
+    background-color: rgb(201, 233, 255);
 }
 
 .titulo {
     text-align: center;
     margin: 15px;
     padding: 10px;
-    background-color: rgba(241, 144, 53, 0.74);
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZL6Ycnsb-dTTmBYArFkrocUgJHZ7tSwUitw&s");
+    background-color: rgba(21, 87, 163, 0.74);
+    background-image: url("https://cdn-icons-png.flaticon.com/512/34/34562.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-size: 72px;
@@ -25,7 +25,7 @@
 }
 
 .button {
-    background-color:  rgba(241, 144, 53, 0.74);
+    background-color: rgba(246, 246, 250, 0.74);
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
     border-radius: 8px 8px 8px 8px;
     padding: 8px;
@@ -40,10 +40,16 @@
     max-width: 300px;
     margin: 10px;
     text-align: center;
+    background-color: aliceblue;
 }
 
-.produto{
-    margin:5px
+.produto {
+    background-color: rgba(53, 172, 241, 0.74);
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
+    padding: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16.5 px;
+    font-weight: bold;
 }
 
 #container2 {
@@ -54,7 +60,34 @@
 }
 
 
-.body{
+.body {
     padding-bottom: 50px;
     min-height: 100vh;
+}
+
+.botao1 {
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 25px 25px 25px 25px;
+    background-image: url("https://static.vecteezy.com/ti/vetor-gratis/p1/6792420-add-to-cart-start-shopping-now-button-concept-illustration-flat-design-vector-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vetor.jpg");
+    width: 55px;
+    height: 55px;
+    background-size: 100%;
+}
+
+.preco_produto {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* background-color: rgba(241, 144, 53, 0.74); */
+    /* box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781); */
+    padding: 8px;
+    font-weight: bold;
+    color: rgba(238, 0, 0, 0.74);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    font-size: 22px;
+    background-color: aliceblue;
+}
+
+.imag {
+    padding: 14px;
+    background-color: aliceblue;
 }

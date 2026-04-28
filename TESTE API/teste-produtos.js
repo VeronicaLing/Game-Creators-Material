@@ -23,18 +23,36 @@ async function produtos_categorias(categoria) {
 
         const conteudo = document.createElement("div")
         conteudo.classList.add("b1")
-        $container2.appendChild(conteudo)
 
-        const nome_produto = document.createElement("h3")
+        const nome_produto = document.createElement("p")
         nome_produto.classList.add("produto")
         nome_produto.textContent = produto.nome
 
+        const preco = document.createElement("p")
+        preco.classList.add("preco_produto")
+        preco.textContent = `R$ ${produto.preco}`
+
         const imagem = document.createElement("img")
-        // imagem.classList.add("imag")
+        imagem.classList.add("imag")
         $container2.appendChild(imagem)
+        imagem.src = "https://placehold.co/400"
+
+        const adicionar = document.createElement("button")
+        adicionar.classList.add("botao1")
+
+        adicionar.addEventListener("click", () => {
+            produto.adicionar()
+        })
+
+
         conteudo.appendChild(nome_produto)
         conteudo.appendChild(imagem)
-        imagem.src = "https://placehold.co/400"
+        conteudo.appendChild(preco)
+        conteudo.appendChild(adicionar)
+
+
+        $container2.appendChild(conteudo)
+
     })
 
 
