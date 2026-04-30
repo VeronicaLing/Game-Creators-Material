@@ -19,7 +19,9 @@ async function produtos_categorias(categoria) {
 
     $container2.innerHTML = ""
 
+
     categorias.forEach(produto => {
+
 
         const conteudo = document.createElement("div")
         conteudo.classList.add("b1")
@@ -34,27 +36,51 @@ async function produtos_categorias(categoria) {
 
         const imagem = document.createElement("img")
         imagem.classList.add("imag")
-        $container2.appendChild(imagem)
         imagem.src = "https://placehold.co/400"
+
+        const descricao_produto = document.createElement("p")
+        descricao_produto.classList.add("descricao")
+
+        conteudo.addEventListener("mouseover", () => {
+            descricao_produto.textContent = produto.descricao
+            conteudo.appendChild(descricao_produto)
+        })
+
+
+        conteudo.addEventListener("mouseout", () => {
+            if (descricao_produto.textContent = "") {
+                descricao_produto.textContent = produto.descricao
+            } else if (descricao_produto.textContent = produto.descricao) {
+                descricao_produto.textContent = ""
+            }
+        })
 
         const adicionar = document.createElement("button")
         adicionar.classList.add("botao1")
 
         adicionar.addEventListener("click", () => {
-            produto.adicionar()
-        })
+            let itens = JSON.parse(localStorage.getItem("itens")) || []
 
+            const item_carrinho = {
+                id: produto.id,
+            }
+
+            itens.push(item_carrinho)
+
+            localStorage.setItem("itens", JSON.stringify(itens))
+
+            console.log("Carrinho:", itens)
+
+        })
 
         conteudo.appendChild(nome_produto)
         conteudo.appendChild(imagem)
         conteudo.appendChild(preco)
         conteudo.appendChild(adicionar)
 
-
         $container2.appendChild(conteudo)
 
     })
-
 
 
     console.log(categorias)
@@ -81,7 +107,6 @@ async function produtos_categorias(categoria) {
         console.log($roupas)
         console.log($livros)
         console.log($diversos)
-
 
     })
 

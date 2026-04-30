@@ -93,3 +93,10 @@
     padding: 14px;
     background-color: aliceblue;
 }
+
+.descricao {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(7, 7, 7);
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.781);
+    color: aliceblue;
+}
