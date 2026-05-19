@@ -1,0 +1,80 @@
+from abc import ABC, abstractmethod
+import random
+
+
+class Entidade(ABC):
+
+    @abstractmethod
+    def tomar_dano(self, valor):
+        pass
+
+    @abstractmethod
+    def atacar(self, alvo, valor):
+        pass
+
+    @abstractmethod
+    def curar(self, valor):
+        pass
+
+    @abstractmethod
+    def morrer(self):
+        pass
+
+    @abstractmethod
+    def usar_habilidade(self, habilidade):
+        pass
+
+    @abstractmethod
+    def rolar_iniciativa(self):
+        pass
+
+
+class Sistemas(Entidade):
+
+    def __init__(self, habilidades=None, vida=100):
+        self.habilidades = habilidades or []
+        self.vida = vida
+
+    def tomar_dano(self, valor):
+        self.vida -= valor
+        print(f"Tomou {valor} de dano. Vida atual: {self.vida}")
+
+        if self.vida <= 0:
+            self.morrer()
+
+    def atacar(self, alvo, valor):
+        print(f"Atacando por {valor} de dano!")
+        alvo.tomar_dano(valor)
+
+    def curar(self, valor):
+        self.vida += valor
+        print(f"Curou {valor}. Vida atual: {self.vida}")
+
+    def morrer(self):
+        print("dead")
+
+    def usar_habilidade(self, habilidade):
+        if habilidade in self.habilidades:
+            print(f"{habilidade} foi usada!")
+        else:
+            print("Habilidade não encontrada.")
+
+    def rolar_iniciativa(self):
+        dado = random.randint(1, 20)
+        print(f"Iniciativa: {dado}")
+
+
+# Teste
+
+personagem = Sistemas(["gelo", "fogo", "raio", "cura"])
+
+inimigo = Sistemas(["veneno"], vida=50)
+
+personagem.tomar_dano(5)
+personagem.curar(15)
+
+personagem.usar_habilidade("fogo")
+
+personagem.atacar(inimigo, 20)
+
+personagem.rolar_iniciativa()
