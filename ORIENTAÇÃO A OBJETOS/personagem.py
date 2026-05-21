@@ -3,7 +3,7 @@ import random
 import json
 from entidade import Sistemas
 
-class Personagem:
+class Personagem(Sistemas):
         
     def __init__(self, nome, nivel=0, habilidades=None, guilda=False):
         self.nome = nome
@@ -48,11 +48,13 @@ class Personagem:
             print(json.load(arquivo))
 
 
-personagem = Personagem("Nami", 2, ["gelo", "fogo", "raio", "cura"], False)
-print(personagem)
-personagem.entrar_guilda("Houth")
-personagem.sair_guilda("Houth")
-personagem.subir_de_nível(1)
-personagem.usar_habilidade()
-personagem.salvar_dados()
-personagem.importar_dados()
+
+if __name__ == "__main__":
+    personagem = Personagem("Nami", 2, ["gelo", "fogo", "raio", "cura"], False)
+    print(personagem)
+    personagem.entrar_guilda("Houth")
+    personagem.sair_guilda("Houth")
+    personagem.subir_de_nível(1)
+    personagem.usar_habilidade()
+    personagem.salvar_dados()
+    personagem.importar_dados()
