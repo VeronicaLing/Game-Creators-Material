@@ -3,7 +3,6 @@ import random
 
 class Entidade(ABC):
 
-
     @abstractmethod
     def tomar_dano(self,valor):
         pass
@@ -43,11 +42,13 @@ class Sistemas(Entidade):
             self.morrer()
 
 
-    def atacar(self,valor):
-        self.vida -= valor
+    def atacar(self, alvo, valor):
+        print(f"{alvo.nome} sofreu dano ")
+        alvo.tomar_dano(valor)
 
     def curar(self,valor):
         self.vida += valor
+        print(f"{self.nome} curou {valor}")
 
     def morrer(self, valor):
         valor >= self.vida
@@ -55,7 +56,6 @@ class Sistemas(Entidade):
 
     def usar_habilidade(self):
         print(f"A habilidade {random.choice(self.habilidades)} foi usada.")
-        # print(f"{self.nome} usou a habilidade {random.choice(self.habilidades)}.")
 
     def rolar_iniciativa(self):
         print(f"Valor iniciativa: {random.randint(1,20)}.")

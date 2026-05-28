@@ -14,7 +14,7 @@ class Inimigo(Sistemas):
         self.classe = classe
 
     def __str__(self):
-        return f"Esse(a) é {self.nome}, um monstro de nível {self.nivel}, da classe {self.classe}."
+        return f"Esse(a) é {self.nome}, um monstro de nível {self.nivel}, da classe {random.choice(self.classe)}."
     
     def definir_nivel(self):
         if self.vida < 150:
@@ -59,3 +59,4 @@ if __name__ == "__main__":
     # inimigo.salvar_dados()
     # inimigo.importar_dados()
     inimigo.tomar_dano(10)
+    inimigo.curar(5)

@@ -5,8 +5,9 @@ from entidade import Sistemas
 
 class Personagem(Sistemas):
         
-    def __init__(self, nome, nivel=0, habilidades=None, guilda=False):
+    def __init__(self, nome, vida, nivel=0, habilidades=None, guilda=False):
         self.nome = nome
+        self.vida = vida
         self.nivel = nivel
         self.habilidades = habilidades 
         self.guilda = guilda
@@ -26,8 +27,8 @@ class Personagem(Sistemas):
         self.nivel += valor
         print(f"{self.nome} subiu para o nível {self.nivel}!")
 
-    def usar_habilidade(self, ):
-        print(f"{self.nome} usou a habilidade {random.choice(self.habilidades)}.")
+    # def usar_habilidade(self):
+    #     print(f"{self.nome} usou a habilidade {random.choice(self.habilidades)}.")
 
 
     def salvar_dados(self):
@@ -50,7 +51,7 @@ class Personagem(Sistemas):
 
 
 if __name__ == "__main__":
-    personagem = Personagem("Nami", 2, ["gelo", "fogo", "raio", "cura"], False)
+    personagem = Personagem("Nami", 150, 2, ["gelo", "fogo", "raio", "cura"], False)
     print(personagem)
     personagem.entrar_guilda("Houth")
     personagem.sair_guilda("Houth")
