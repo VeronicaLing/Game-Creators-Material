@@ -6,29 +6,8 @@ from personagem import Personagem
 from inimigo import Inimigo
 from abc import ABC, abstractmethod
 
-# class Batalha(ABC):
     
-    # @abstractmethod
-    # def rolar_iniciativa(self,valor):
-    #     pass
-    
-    # @abstractmethod
-    # def turnos(self,valor):
-    #     pass
-    
-    # @abstractmethod
-    # def personagem(self,valor):
-    #     pass
-    
-    # @abstractmethod
-    # def inimigo(self,valor):
-    #     pass
-    
-    # @abstractmethod
-    # def vez_turno(self,valor):
-    #     pass
-    
-class BatalhaIniciar(Inimigo, Personagem):
+class BatalhaIniciar:
     
     def __init__ (self, rodada, personagem: Personagem, inimigo: Inimigo):
         self.rodada = rodada
@@ -36,61 +15,103 @@ class BatalhaIniciar(Inimigo, Personagem):
         self.inimigo = inimigo
                   
       
-    def iniciar(self):
+    def iniciar(self, atacante, alvo):
         
-        while True:
-            resultado1 = random.randint(1, 10)
-            print(f"{personagem.nome}, tirou o valor de iniciativa: {resultado1}.")
-            
-            resultado2 = random.randint(1,10)
-            print(f"{inimigo.nome}, tirou o valor de iniciativa: {resultado2}.")
-            
-            if resultado1 > resultado2:
-                print(f"{personagem.nome} inicia a rodada.")
-                break
+        iniciativa = random.randint(1, 20)
         
-            elif resultado1 < resultado2:
-                print(f"{inimigo.nome} inicia a rodada.")
-                break
+        turno = iniciativa > 10
+        # print(f"Valor de iniciativa: {iniciativa}.")
+        
+        rodada = 1
+        while alvo.vida > 0 or atacante.vida > 0:
+            print(f"Rodada {rodada}.")
             
-            else:
-                print("Empate!")
-                return
+            if turno:
+                print(f"Rodada de {atacante.nome}.")
+                self.evento(personagem, inimigo)
+                
+        
+            elif not turno:
+                print(f"{alvo.nome} inicia a rodada.")
+                self.evento(inimigo, personagem)
+                
+            turno = not turno
+            rodada += 1
+            
+    def evento(self, atacante, alvo):    
                   
+        print("1 - Atacar.")
+        print("2 - Curar.")
+        print("3 - Usar habilidade.")
+        print("4 - Passar rodada.")
         
-    def turno(self):
-        print(f"Rodada {self.rodada}.")
-        self.rodada =+ 1
-        
-        while self.personagem.vida > 0 or self.inimigo.vida > 0:
-            print("1 - Atacar.")
-            print("2 - Curar.")
-            print("3 - Usar habilidade.")
-            print("4 - Passar rodada.")
+        escolha = input("Escolha um valor: ")
+        if escolha == "1":
+            atacante.atacar(alvo, 10)
             
-            escolha = input("Escolha um valor: ")
-            if escolha == "1":
-                self.personagem.atacar(self.inimigo, 10)
-                
-            if escolha == "2":
-                self.personagem.curar(5)
-                
-            if escolha == "3":
-                self.personagem.usar_habilidade()
-                
+        elif escolha == "2":
+            atacante.curar(5)
+            
+        elif escolha == "3":
+            atacante.usar_habilidade()
+            
+        elif escolha == "4":
+            pass
+
+            
    
-            
-            
-        
-        
-        
-        
         
 if __name__ == "__main__":
     inimigo = Inimigo("Morun", 160, ["ogro","orc","dríade", "goblin"], ["gelo", "fogo", "raio", "cura"])
     personagem = Personagem("Nami", 200, 2, ["gelo", "fogo", "raio", "cura"], False) 
     batalha = BatalhaIniciar(1, personagem, inimigo)
-    batalha.iniciar()
-    batalha.turno()
-    batalha.atacar()
+    batalha.iniciar(personagem, inimigo)
 
+
+#def iniciar(self):
+        
+#         while True:
+#             resultado1 = random.randint(1, 10)
+#             print(f"{personagem.nome}, tirou o valor de iniciativa: {resultado1}.")
+            
+#             resultado2 = random.randint(1,10)
+#             print(f"{inimigo.nome}, tirou o valor de iniciativa: {resultado2}.")
+            
+#             if resultado1 > resultado2:
+#                 print(f"{personagem.nome} inicia a rodada.")
+#                 personagem == "atacante"
+#                 self.turno(personagem, inimigo)
+        
+#             elif resultado1 < resultado2:
+#                 print(f"{inimigo.nome} inicia a rodada.")
+#                 inimigo == "alvo"
+#                 self.turno(inimigo, personagem)
+#                 break
+            
+#             else:
+#                 print("Empate!")
+                
+                  
+#     def turno(self, atacante, alvo):
+#         rodada = 1
+        
+#         while alvo.vida > 0 or atacante.vida > 0:
+#             print(f"Rodada {rodada}.")
+#             print("1 - Atacar.")
+#             print("2 - Curar.")
+#             print("3 - Usar habilidade.")
+#             print("4 - Passar rodada.")
+            
+#             escolha = input("Escolha um valor: ")
+#             rodada += 1
+#             if escolha == "1":
+#                 atacante.atacar(alvo, 10)
+                
+#             elif escolha == "2":
+#                 atacante.curar(5)
+                
+#             elif escolha == "3":
+#                 atacante.usar_habilidade()
+                
+#             elif escolha == "4":
+#                 pass
