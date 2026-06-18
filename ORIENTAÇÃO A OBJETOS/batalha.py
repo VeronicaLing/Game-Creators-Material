@@ -1,7 +1,8 @@
 import time
 import random
 import json
-from entidade import Sistemas
+from entidade2 import Habilidades
+from entidade2 import Sistema
 from personagem import Personagem
 from inimigo import Inimigo
 from abc import ABC, abstractmethod
@@ -9,10 +10,12 @@ from abc import ABC, abstractmethod
     
 class BatalhaIniciar:
     
-    def __init__ (self, rodada, personagem: Personagem, inimigo: Inimigo):
+    def __init__ (self, rodada, personagem: Personagem, inimigo: Inimigo, habilidades=None, curas_usadas=0):
         self.rodada = rodada
+        self.curas_usadas = curas_usadas
         self.personagem = personagem
         self.inimigo = inimigo
+        self.habilidades = habilidades
                   
       
     def iniciar(self, atacante, alvo):
@@ -23,23 +26,24 @@ class BatalhaIniciar:
         # print(f"Valor de iniciativa: {iniciativa}.")
         
         rodada = 1
-        while alvo.vida > 0 or atacante.vida > 0:
+        while alvo.vida > 0 and atacante.vida > 0:
             print(f"Rodada {rodada}.")
             
             if turno:
-                print(f"Rodada de {atacante.nome}.")
-                self.evento(personagem, inimigo)
+                print(f"Valor de iniciativa: {iniciativa}. {atacante.nome} inicia a rodada.")
+                self.evento(atacante, alvo)
                 
         
             elif not turno:
-                print(f"{alvo.nome} inicia a rodada.")
-                self.evento(inimigo, personagem)
+                print(f"Valor de iniciativa: {iniciativa}. {alvo.nome} inicia a rodada.")
+                self.evento(alvo, atacante)
                 
             turno = not turno
             rodada += 1
             
     def evento(self, atacante, alvo):    
-                  
+        
+                        
         print("1 - Atacar.")
         print("2 - Curar.")
         print("3 - Usar habilidade.")
@@ -50,10 +54,15 @@ class BatalhaIniciar:
             atacante.atacar(alvo, 10)
             
         elif escolha == "2":
-            atacante.curar(5)
+            if self.curas_usadas < 3:
+                atacante.curar(5)
+                self.curas_usadas += 1
+            else:
+                print('Limite de cura atingido.')
             
         elif escolha == "3":
-            atacante.usar_habilidade()
+            habilidade = random.choice(atacante.habilidades)
+            atacante.usar_habilidade(habilidade, alvo)
             
         elif escolha == "4":
             pass
@@ -62,7 +71,7 @@ class BatalhaIniciar:
    
         
 if __name__ == "__main__":
-    inimigo = Inimigo("Morun", 160, ["ogro","orc","dríade", "goblin"], ["gelo", "fogo", "raio", "cura"])
+    inimigo = Inimigo("Morun", 350, ["ogro","orc","dríade", "goblin"], ["nevoa", "acido", "lama", "veneno"],5)
     personagem = Personagem("Nami", 200, 2, ["gelo", "fogo", "raio", "cura"], False) 
     batalha = BatalhaIniciar(1, personagem, inimigo)
     batalha.iniciar(personagem, inimigo)

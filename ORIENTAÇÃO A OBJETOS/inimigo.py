@@ -1,15 +1,15 @@
 import time
 import random
 import json
-from entidade import Sistemas
+from entidade2 import Sistema
 
-class Inimigo(Sistemas):
+class Inimigo(Sistema):
         
         
-    def __init__(self, nome, vida, classe, habilidade=None, nivel=0):
+    def __init__(self, nome, vida, classe, habilidades=None, nivel=0):
         self.nome = nome
         self.nivel = nivel
-        self.habilidade = habilidade
+        self.habilidades = habilidades
         self.vida = vida 
         self.classe = classe
 
@@ -29,16 +29,23 @@ class Inimigo(Sistemas):
     def definir_classe(self):
         print(f"{self.nome} é da classe {random.choice(self.classe)}.")
         
-    def habilidades(self):
-        print(f"{self.nome} é usuário da habilidade {random.choice(self.habilidade)}.")
-
+    def habilidade(self):
+        print(f"{self.nome} é usuário da habilidade {random.choice(self.habilidades)}.")
+        
+    def usar_habilidade(self, habilidade, alvo):
+        print(f"{self.nome} usou {habilidade}!\n{alvo.nome} vida atual: {alvo.vida}.")
+        
+    def rolar_iniciativa(self):
+        iniciativa = random.randint(1, 20)
+        print(f"{self.nome} rolou {iniciativa}.")
+        return iniciativa
 
     def salvar_dados(self):
 
         inimigo = {
             "nome": self.nome,
             "nivel": self.nivel,
-            "habilidades": self.habilidade,
+            "habilidades": self.habilidades,
             "claase": self.classe,
         }
 
@@ -53,7 +60,7 @@ class Inimigo(Sistemas):
 
 if __name__ == "__main__":
     inimigo = Inimigo("Morun", 160, ["ogro","orc","dríade", "goblin"], ["gelo", "fogo", "raio", "cura"])
-    inimigo.habilidades()
+    inimigo.habilidade()
     inimigo.definir_classe()
     inimigo.definir_nivel()
     # inimigo.salvar_dados()

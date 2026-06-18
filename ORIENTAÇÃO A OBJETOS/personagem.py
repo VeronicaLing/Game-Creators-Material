@@ -1,9 +1,9 @@
 import time
 import random
 import json
-from entidade import Sistemas
+from entidade2 import Sistema
 
-class Personagem(Sistemas):
+class Personagem(Sistema):
         
     def __init__(self, nome, vida, nivel=0, habilidades=None, guilda=False):
         self.nome = nome
@@ -29,6 +29,18 @@ class Personagem(Sistemas):
 
     # def usar_habilidade(self):
     #     print(f"{self.nome} usou a habilidade {random.choice(self.habilidades)}.")
+
+    def usar_habilidade(self, habilidade, alvo):
+        if alvo == self:
+            print(f"{self.nome} usou {habilidade}! Vida atual: {self.vida}.")
+        else:
+            print(f"{self.nome} usou {habilidade}!\n{alvo.nome} vida atual: {alvo.vida}.")
+            
+        
+    def rolar_iniciativa(self):
+        iniciativa = random.randint(1, 20)
+        print(f"{self.nome} rolou {iniciativa}.")
+        return iniciativa
 
 
     def salvar_dados(self):
