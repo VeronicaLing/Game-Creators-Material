@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libary</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+
+            <div>
+                <a href="/" class="titulo">Home</a>
+            </div>
+
+            <ul>
+                <li><a href="/livros">Lista de Livros</a></li>
+                <li><a href="/perfil">Perfil</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">Github</a></li>
+                <li><a href="">Github</a></li>
+                <li><a href="">Github</a></li>
+            </ul>
+            <p>Desenvolvido por &copy;wangling</p>
+        </nav>
+    </footer>
+
+</body>
+</html>
