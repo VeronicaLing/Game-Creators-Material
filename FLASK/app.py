@@ -14,4 +14,4 @@ def livros():
 def perfil():
     return render_template('perfil.html')
 
-app.run()
+app.run(debug=True)
